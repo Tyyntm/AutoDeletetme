@@ -17,14 +17,17 @@
 #=========================================================================
 
 import os
+from vars import api_id, api_hash, bot_token, session, time, chats, white_list, black_list, database_uri
 
-API_ID       = int(os.environ.get("API_ID", ""))
-API_HASH     = os.environ.get("API_HASH", "")
-BOT_TOKEN    = os.environ.get("BOT_TOKEN", "")
-SESSION      = os.environ.get("SESSION", "")
-TIME         = int(os.environ.get("TIME", 10))
-CHATS        = [int(cht) for cht in os.environ.get("CHATS", "").split()]
-WHITE_LIST   = [int(wht) for wht in os.environ.get("WHITE_LIST", "").split()]
-BLACK_LIST   = [int(blk) for blk in os.environ.get("BLACK_LIST", "").split()]
-DATABASE_URI = os.environ.get("DATABASE_URI", "")
+
+
+API_ID       = int(os.environ.get("API_ID", api_id))
+API_HASH     = os.environ.get("API_HASH", api_hash)
+BOT_TOKEN    = os.environ.get("BOT_TOKEN", bot_token)
+SESSION      = os.environ.get("SESSION", session)
+TIME         = int(os.environ.get("TIME", time))
+CHATS        = [int(cht) for cht in os.environ.get("CHATS", chats).split()]
+WHITE_LIST   = [int(wht) for wht in os.environ.get("WHITE_LIST", white_list).split()]
+BLACK_LIST   = [int(blk) for blk in os.environ.get("BLACK_LIST", black_list).split()]
+DATABASE_URI = os.environ.get("DATABASE_URI", database_uri)
 PORT         = os.environ.get("PORT", "8080")
